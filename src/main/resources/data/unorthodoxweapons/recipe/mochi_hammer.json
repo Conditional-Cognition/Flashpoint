@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BBA",
+    "  A",
+    "  A"
+  ],
+  "key": {
+    "A": { "item": "minecraft:stick" },
+    "B": { "item": "minecraft:stripped_oak_log" }
+  },
+  "result": {
+    "id": "unorthodoxweapons:mochi_hammer",
+    "count": 1
+  }
+}

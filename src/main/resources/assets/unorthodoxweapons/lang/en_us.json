@@ -1,0 +1,34 @@
+{
+  "itemGroup.unorthodoxweapons": "Unorthodox Weapons",
+
+  "item.unorthodoxweapons.jungle_spear": "Jungle Spear",
+  "item.unorthodoxweapons.jungle_spear.desc": "Made as a testing item. Best not to use.",
+  "item.unorthodoxweapons.admin_tool": "Admin Tool",
+  "item.unorthodoxweapons.admin_tool.desc": "Has 2 Modes listed below:",
+  "item.unorthodoxweapons.admin_tool.desc2": "    Kill/Kick: Attack kills whatever you're looking at.",
+  "item.unorthodoxweapons.admin_tool.desc3": "    Break/Grab: Grabs whatever block you're looking at and gives you a copy.",
+  "item.unorthodoxweapons.firebrand": "Firebrand",
+  "item.unorthodoxweapons.firebrand.desc": "Use Key throws a blaze fireball in look direction.",
+  "item.unorthodoxweapons.firebrand.desc2": "Passively ignites hit targets on melee",
+  "item.unorthodoxweapons.firebrand_component": "Firebrand Component",
+  "item.unorthodoxweapons.spear_of_longinus": "Spear of Longinus",
+  "item.unorthodoxweapons.spear_of_longinus.desc": "Breaks Shields upon melee or ranged attacks",
+  "item.unorthodoxweapons.spear_of_longinus.desc2": "Returns when thrown (automatically enchanted with Loyalty)",
+  "item.unorthodoxweapons.mochi_hammer": "Mochi Hammer",
+  "item.unorthodoxweapons.mochi_hammer.desc": "Makes targets drop a random inventory item upon critical hit",
+  "item.unorthodoxweapons.block_hole_launcher": "Block Hole Launcher",
+  "item.unorthodoxweapons.block_hole_launcher.desc": "Self Explanatory. Lasts for 10 seconds.",
+  "item.unorthodoxweapons.block_hole_launcher.desc2": "Pulls in living entities for 30 blocks and damages them for 5.",
+
+
+  "item.unorthodoxweapons.e": "E",
+  "item.unorthodoxweapons.e.desc": "A",
+  "item.unorthodoxweapons.e.desc2": "Sports",
+  "item.unorthodoxweapons.e.desc3": "It's in the game",
+
+  "entity.unorthodoxweapons.thrown_longinus_spear": "Thrown Spear of Longinus",
+
+  "key.categories.unorthodoxweapons": "Unorthodox Weapons",
+  "key.unorthodoxweapons.admin_radial": "Open Admin Radial Menu",
+  "item.unorthodoxweapons.unobtainble.desc": "noe"
+}

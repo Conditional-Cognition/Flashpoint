@@ -1,0 +1,16 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "unorthodoxweapons:item/admin_tool_model"
+  },
+  "perspectives": {
+    "gui": {
+      "parent": "minecraft:item/generated",
+      "textures": {
+        "layer0": "unorthodoxweapons:item/admin_tool_item"
+      },
+      "gui_light": "front"
+    }
+  }
+}

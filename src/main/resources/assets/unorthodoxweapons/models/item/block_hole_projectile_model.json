@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "unorthodoxweapons:item/block_hole_projectile"
+  }
+}

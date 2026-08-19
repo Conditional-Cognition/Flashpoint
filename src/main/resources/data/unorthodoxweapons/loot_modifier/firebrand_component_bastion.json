@@ -1,0 +1,19 @@
+{
+  "type": "neoforge:add_item",
+  "conditions": [
+    {
+      "condition": "minecraft:any_of",
+      "terms": [
+        { "condition": "minecraft:loot_table_id", "loot_table_id": "minecraft:chests/bastion_treasure" },
+        { "condition": "minecraft:loot_table_id", "loot_table_id": "minecraft:chests/bastion_other" },
+        { "condition": "minecraft:loot_table_id", "loot_table_id": "minecraft:chests/bastion_bridge" },
+        { "condition": "minecraft:loot_table_id", "loot_table_id": "minecraft:chests/bastion_hoglin_stable" }
+      ]
+    },
+    {
+      "condition": "minecraft:random_chance",
+      "chance": 0.15
+    }
+  ],
+  "item": "unorthodoxweapons:firebrand_component"
+}
