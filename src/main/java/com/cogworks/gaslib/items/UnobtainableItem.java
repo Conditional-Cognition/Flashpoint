@@ -24,7 +24,7 @@ public class UnobtainableItem extends Item {
     }
     @Override
     public void appendHoverText(@NotNull ItemStack stack, Item.@NotNull TooltipContext context, List<Component> tooltipComponents, @NotNull TooltipFlag tooltipFlag) {
-        tooltipComponents.add(Component.translatable("item.unorthodoxweapons.unobtainble.desc"));
+        tooltipComponents.add(Component.translatable("item.gaslib.unobtainble.desc"));
         super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
     }
 }

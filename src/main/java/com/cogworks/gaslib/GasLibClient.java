@@ -6,8 +6,11 @@ import net.minecraft.client.renderer.entity.ThrownTridentRenderer;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.projectile.ThrownTrident;*/
 import com.cogworks.gaslib.client.render.GasolineBlobProjectileRenderer;
+import com.cogworks.gaslib.registry.ModBlocks;
 import com.cogworks.gaslib.registry.ModEntities;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -34,6 +37,7 @@ public class GasLibClient {
 
     @SubscribeEvent
     static void onClientSetup(FMLClientSetupEvent event) {
+        event.enqueueWork(() -> ItemBlockRenderTypes.setRenderLayer(ModBlocks.GASOLINE_SPREAD.get(), RenderType.cutout()));
         GasLib.LOGGER.info("HELLO FROM CLIENT SETUP");
         GasLib.LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
     }

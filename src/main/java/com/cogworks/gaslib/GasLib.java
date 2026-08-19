@@ -21,6 +21,7 @@ public class GasLib {
     public GasLib(IEventBus modEventBus, ModContainer modContainer) {
         modEventBus.addListener(this::commonSetup);
         ModParticles.PARTICLE_TYPES.register(modEventBus);
+        ModBlocks.BLOCKS.register(modEventBus);
         ModEntities.ENTITY_TYPES.register(modEventBus);
         ModItems.ITEMS.register(modEventBus);
         NeoForge.EVENT_BUS.register(this);
