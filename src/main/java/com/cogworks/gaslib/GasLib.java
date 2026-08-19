@@ -15,7 +15,7 @@ import net.neoforged.neoforge.event.server.ServerStartingEvent;
 
 @Mod(GasLib.MODID)
 public class GasLib {
-    public static final String MODID = "gasoline_library";
+    public static final String MODID = "gaslib";
     public static final Logger LOGGER = LogUtils.getLogger();
 
     public GasLib(IEventBus modEventBus, ModContainer modContainer) {
