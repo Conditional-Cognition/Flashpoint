@@ -1,11 +1,6 @@
 package com.cogworks.gaslib;
-/*
-import com.cogworks.unorthodoxweapons.registry.ModEntities;
 
-import net.minecraft.client.renderer.entity.ThrownTridentRenderer;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.projectile.ThrownTrident;*/
-import com.cogworks.gaslib.client.render.GasolineBlobProjectileRenderer;
+import com.cogworks.gaslib.client.render.*;
 import com.cogworks.gaslib.registry.ModBlocks;
 import com.cogworks.gaslib.registry.ModEntities;
 import net.minecraft.client.Minecraft;
@@ -21,7 +16,6 @@ import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
-//import org.jetbrains.annotations.NotNull;
 
 @Mod(value = GasLib.MODID, dist = Dist.CLIENT)
 @EventBusSubscriber(modid = GasLib.MODID, value = Dist.CLIENT)
@@ -33,6 +27,7 @@ public class GasLibClient {
 
     private void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(ModEntities.GASOLINE_BLOB_PROJECTILE.get(), GasolineBlobProjectileRenderer::new);
+        event.registerEntityRenderer(ModEntities.GASOLINE_PROJECTILE.get(), GasolineProjectileRenderer::new);
     }
 
     @SubscribeEvent

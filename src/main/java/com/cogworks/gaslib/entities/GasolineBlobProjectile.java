@@ -1,7 +1,10 @@
 package com.cogworks.gaslib.entities;
 
+import com.cogworks.gaslib.blocks.GasolineSpread;
 import com.cogworks.gaslib.registry.ModEntities;
 import com.cogworks.gaslib.registry.ModItems;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.projectile.ThrowableItemProjectile;
@@ -29,7 +32,6 @@ public class GasolineBlobProjectile extends ThrowableItemProjectile {
         if (level.isClientSide) return;
         if (this.tickCount % 5 != 0) return;
         EntityType<?> type = ModEntities.GASOLINE_PROJECTILE.get();
-        if (type == null) return;
         Entity created = type.create(level);
         if (created == null) return;
         created.setPos(this.getX(), this.getY(), this.getZ());
@@ -42,9 +44,42 @@ public class GasolineBlobProjectile extends ThrowableItemProjectile {
     }
 
     @Override
-    protected void onHitBlock(@NotNull BlockHitResult result) {
-        enum faceHit {
-            WALL
+    protected void onHitBlock(@NotNull BlockHitResult hit) {
+        super.onHitBlock(hit);
+        if (this.level().isClientSide) return;
+        BlockPos hitPos = hit.getBlockPos();
+        Direction face = hit.getDirection();
+        BlockPos origin = hitPos.relative(face); // place in the neighboring space (the space on the face)
+        Direction placeFace = face.getOpposite(); // the face on the placed block that faces the original block
+
+        BlockPos[] targets;
+        if (face.getAxis() == Direction.Axis.Y) {
+            targets = new BlockPos[] {
+                    origin,
+                    origin.offset(-1, 0, -1),
+                    origin.offset(1, 0, -1),
+                    origin.offset(-1, 0, 1),
+                    origin.offset(1, 0, 1)
+            };
+        } else if (face.getAxis() == Direction.Axis.Z) {
+            targets = new BlockPos[] {
+                    origin,
+                    origin.offset(-1, -1, 0),
+                    origin.offset(1, -1, 0),
+                    origin.offset(-1, 1, 0),
+                    origin.offset(1, 1, 0)
+            };
+        } else {
+            targets = new BlockPos[] {
+                    origin,
+                    origin.offset(0, -1, -1),
+                    origin.offset(0, 1, -1),
+                    origin.offset(0, -1, 1),
+                    origin.offset(0, 1, 1)
+            };
         }
+
+        for (BlockPos p : targets) GasolineSpread.placeWithFallback(this.level(), p, placeFace);
+        this.discard();
     }
 }
