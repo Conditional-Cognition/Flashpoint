@@ -1,5 +1,6 @@
 {
   "item.gaslib.unobtainble.desc": "Noe",
 
-  "item.gaslib.firestarter": "Firestarter"
+  "item.gaslib.firestarter": "Firestarter",
+  "itemGroup.flashpoint": "Flashpoint"
 }

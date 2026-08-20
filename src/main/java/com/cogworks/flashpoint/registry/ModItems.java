@@ -1,5 +1,6 @@
 package com.cogworks.flashpoint.registry;
 
+import com.cogworks.ampersandlib.items.UnobtainableItem;
 import com.cogworks.flashpoint.Flashpoint;
 import com.cogworks.flashpoint.items.*;
 import net.minecraft.world.item.*;

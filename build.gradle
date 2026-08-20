@@ -32,6 +32,17 @@ repositories {
         name = "JitPack"
         url = "https://jitpack.io"
     }
+    exclusiveContent {
+        forRepository {
+            maven {
+                name = "Modrinth"
+                url = "https://api.modrinth.com/maven"
+            }
+        }
+        filter {
+            includeGroup "maven.modrinth"
+        }
+    }
 }
 
 base {
@@ -119,8 +130,10 @@ configurations {
 }
 
 dependencies {
-    // theres he is!
+    // AmpersandLib dependency for Neoforge 1.21.1
     implementation 'com.github.Conditional-Cognition:AmpersandLib:v1.1.1-1.21.1'
+    // AzureLib dependency for NeoForge 1.21.1
+    implementation "maven.modrinth:7zlUOZvb:a66vB8PE"
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.
