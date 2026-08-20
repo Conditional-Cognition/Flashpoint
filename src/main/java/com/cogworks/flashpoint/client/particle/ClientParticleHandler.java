@@ -1,13 +1,14 @@
-package com.cogworks.gaslib.client.particle;
+package com.cogworks.flashpoint.client.particle;
 
-import com.cogworks.gaslib.registry.ModParticles;
+import com.cogworks.flashpoint.Flashpoint;
+import com.cogworks.flashpoint.registry.ModParticles;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
 
 @SuppressWarnings("removal")
-@EventBusSubscriber(modid = "unorthodoxweapons", bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+@EventBusSubscriber(modid = Flashpoint.MODID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class ClientParticleHandler {
 
     @SubscribeEvent

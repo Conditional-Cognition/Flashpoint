@@ -1,6 +1,6 @@
-package com.cogworks.gaslib.blocks;
+package com.cogworks.flashpoint.blocks;
 
-import com.cogworks.gaslib.registry.ModBlocks;
+import com.cogworks.flashpoint.registry.ModBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -18,11 +18,6 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
 
-/**
- * GasolineSpread: horizontals are only set when the player clicks that side.
- * DOWN/UP are true only when this block can attach to a sturdy face (no linking to other GasolineSpread blocks).
- * Derived *_down flags are true only when the corresponding horizontal is true AND this block's DOWN is true.
- */
 public class GasolineSpread extends Block {
 
     public static final BooleanProperty UP = BlockStateProperties.UP;
@@ -104,7 +99,6 @@ public class GasolineSpread extends Block {
         boolean up    = state.getValue(UP) && canAttachToSide(world, pos, Direction.UP);
         boolean down  = state.getValue(DOWN) && canAttachToSide(world, pos, Direction.DOWN);
 
-        // keep horizontal true only if it was true and still has a sturdy neighbor; do NOT auto-enable
         boolean north = state.getValue(NORTH) && canAttachToSide(world, pos, Direction.NORTH);
         boolean east  = state.getValue(EAST)  && canAttachToSide(world, pos, Direction.EAST);
         boolean south = state.getValue(SOUTH) && canAttachToSide(world, pos, Direction.SOUTH);
@@ -147,7 +141,6 @@ public class GasolineSpread extends Block {
     private static boolean canAttachToSide(LevelReader world, BlockPos pos, Direction face) {
         BlockPos neighbor = pos.relative(face);
         BlockState ns = world.getBlockState(neighbor);
-        // Treat another GasolineSpread as NOT a support
         if (ns.getBlock() instanceof GasolineSpread) {
             return false;
         }
@@ -160,7 +153,6 @@ public class GasolineSpread extends Block {
         BlockPos below = pos.below();
         BlockState belowState = world.getBlockState(below);
         if (belowState.getBlock() instanceof GasolineSpread) {
-            // connect to the same cardinal face on the block below
             return belowState.getValue(propertyFor(horizontal));
         }
         return false;
@@ -180,9 +172,11 @@ public class GasolineSpread extends Block {
     public static boolean placeSingleFace(LevelAccessor world, BlockPos pos, Direction face) {
         BlockState current = world.getBlockState(pos);
         if (!(current.getBlock() instanceof GasolineSpread)) {
-            // only place into air/replaceable blocks — do not overwrite solid blocks
-            boolean canReplace = current.isAir() || current.getMaterial().isReplaceable();
-            if (!canReplace) return false;
+            boolean canPlace = world.isEmptyBlock(pos)
+                    || current.getBlock() instanceof net.minecraft.world.level.block.SnowLayerBlock
+                    || current.getBlock() instanceof net.minecraft.world.level.block.BushBlock
+                    || current.getBlock() instanceof net.minecraft.world.level.block.LiquidBlock;
+            if (!canPlace) return false;
             placeWithClickedSide(world, pos, face);
             return true;
         }
@@ -299,7 +293,6 @@ public class GasolineSpread extends Block {
 
     @Override
     public @NotNull VoxelShape getCollisionShape(@NotNull BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos, @NotNull CollisionContext ctx) {
-        // if you want no collision but proper selection, return Shapes.empty here and keep getShape above.
         return faceShape(state);
     }
 }

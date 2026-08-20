@@ -1,8 +1,8 @@
-package com.cogworks.gaslib.entities;
+package com.cogworks.flashpoint.entities;
 
-import com.cogworks.gaslib.blocks.GasolineSpread;
-import com.cogworks.gaslib.registry.ModEntities;
-import com.cogworks.gaslib.registry.ModItems;
+import com.cogworks.flashpoint.blocks.GasolineSpread;
+import com.cogworks.flashpoint.registry.ModEntities;
+import com.cogworks.flashpoint.registry.ModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.entity.Entity;

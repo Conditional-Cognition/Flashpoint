@@ -1,9 +1,9 @@
-package com.cogworks.gaslib;
+package com.cogworks.flashpoint;
 
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
-import com.cogworks.gaslib.registry.*;
+import com.cogworks.flashpoint.registry.*;
 
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -13,12 +13,12 @@ import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 
-@Mod(GasLib.MODID)
-public class GasLib {
-    public static final String MODID = "gaslib";
+@Mod(Flashpoint.MODID)
+public class Flashpoint {
+    public static final String MODID = "flashpoint";
     public static final Logger LOGGER = LogUtils.getLogger();
 
-    public GasLib(IEventBus modEventBus, ModContainer modContainer) {
+    public Flashpoint(IEventBus modEventBus, ModContainer modContainer) {
         modEventBus.addListener(this::commonSetup);
         ModParticles.PARTICLE_TYPES.register(modEventBus);
         ModBlocks.BLOCKS.register(modEventBus);

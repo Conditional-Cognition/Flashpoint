@@ -1,4 +1,4 @@
-package com.cogworks.gaslib.items;
+package com.cogworks.flashpoint.items;
 
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.Entity;

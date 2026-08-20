@@ -1,4 +1,4 @@
-package com.cogworks.gaslib.client.particle;
+package com.cogworks.flashpoint.client.particle;
 
 import net.minecraft.client.particle.*;
 import net.minecraft.client.multiplayer.ClientLevel;

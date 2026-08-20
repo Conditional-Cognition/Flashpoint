@@ -1,13 +1,13 @@
-package com.cogworks.gaslib.registry;
+package com.cogworks.flashpoint.registry;
 
-import com.cogworks.gaslib.GasLib;
-import com.cogworks.gaslib.items.*;
+import com.cogworks.flashpoint.Flashpoint;
+import com.cogworks.flashpoint.items.*;
 import net.minecraft.world.item.*;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 public class ModItems {
-    public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(GasLib.MODID);
+    public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(Flashpoint.MODID);
 
     public static final DeferredItem<FirestarterItem> FIRESTARTER = ITEMS.register(
             "firestarter",

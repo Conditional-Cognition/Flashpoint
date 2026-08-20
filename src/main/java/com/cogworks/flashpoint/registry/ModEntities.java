@@ -1,8 +1,8 @@
-package com.cogworks.gaslib.registry;
+package com.cogworks.flashpoint.registry;
 
-import com.cogworks.gaslib.GasLib;
+import com.cogworks.flashpoint.Flashpoint;
 
-import com.cogworks.gaslib.entities.*;
+import com.cogworks.flashpoint.entities.*;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
@@ -11,7 +11,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 public class ModEntities {
     public static final DeferredRegister<EntityType<?>> ENTITY_TYPES =
-            DeferredRegister.create(Registries.ENTITY_TYPE, GasLib.MODID);
+            DeferredRegister.create(Registries.ENTITY_TYPE, Flashpoint.MODID);
 
     public static final DeferredHolder<EntityType<?>, EntityType<GasolineBlobProjectile>> GASOLINE_BLOB_PROJECTILE =
             ENTITY_TYPES.register("gasoline_blob_projectile", id -> EntityType.Builder.of(GasolineBlobProjectile::new, MobCategory.MISC)

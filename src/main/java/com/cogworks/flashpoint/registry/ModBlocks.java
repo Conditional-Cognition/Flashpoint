@@ -1,6 +1,6 @@
-package com.cogworks.gaslib.registry;
+package com.cogworks.flashpoint.registry;
 
-import com.cogworks.gaslib.blocks.GasolineSpread;
+import com.cogworks.flashpoint.blocks.GasolineSpread;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;

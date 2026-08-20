@@ -1,7 +1,7 @@
-package com.cogworks.gaslib.items;
+package com.cogworks.flashpoint.items;
 
-import com.cogworks.gaslib.entities.GasolineBlobProjectile;
-import com.cogworks.gaslib.registry.ModEntities;
+import com.cogworks.flashpoint.entities.GasolineBlobProjectile;
+import com.cogworks.flashpoint.registry.ModEntities;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.LivingEntity;
@@ -40,7 +40,7 @@ public class FirestarterItem extends Item {
         return InteractionResultHolder.success(player.getItemInHand(hand));
     }
 
-    public int getUseDuration(ItemStack stack) {
+    public int getUseDuration(@SuppressWarnings("unused") ItemStack stack) {
         return 72000;
     }
 }

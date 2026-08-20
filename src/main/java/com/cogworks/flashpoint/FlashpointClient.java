@@ -1,8 +1,8 @@
-package com.cogworks.gaslib;
+package com.cogworks.flashpoint;
 
-import com.cogworks.gaslib.client.render.*;
-import com.cogworks.gaslib.registry.ModBlocks;
-import com.cogworks.gaslib.registry.ModEntities;
+import com.cogworks.flashpoint.client.render.*;
+import com.cogworks.flashpoint.registry.ModBlocks;
+import com.cogworks.flashpoint.registry.ModEntities;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
@@ -17,10 +17,10 @@ import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 
-@Mod(value = GasLib.MODID, dist = Dist.CLIENT)
-@EventBusSubscriber(modid = GasLib.MODID, value = Dist.CLIENT)
-public class GasLibClient {
-    public GasLibClient(IEventBus modEventBus, ModContainer container) {
+@Mod(value = Flashpoint.MODID, dist = Dist.CLIENT)
+@EventBusSubscriber(modid = Flashpoint.MODID, value = Dist.CLIENT)
+public class FlashpointClient {
+    public FlashpointClient(IEventBus modEventBus, ModContainer container) {
         container.registerExtensionPoint(IConfigScreenFactory.class, ConfigurationScreen::new);
         modEventBus.addListener(this::registerRenderers);
     }
@@ -33,7 +33,7 @@ public class GasLibClient {
     @SubscribeEvent
     static void onClientSetup(FMLClientSetupEvent event) {
         event.enqueueWork(() -> ItemBlockRenderTypes.setRenderLayer(ModBlocks.GASOLINE_SPREAD.get(), RenderType.cutout()));
-        GasLib.LOGGER.info("HELLO FROM CLIENT SETUP");
-        GasLib.LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
+        Flashpoint.LOGGER.info("HELLO FROM CLIENT SETUP");
+        Flashpoint.LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
     }
 }
