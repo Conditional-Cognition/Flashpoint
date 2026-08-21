@@ -1,18 +1,18 @@
 {
   "multipart": [
-    { "when": { "north_down": true, "north": true }, "apply": { "model": "gaslib:block/gasoline_spread_north_down" } },
-    { "when": { "north": true, "north_down": false }, "apply": { "model": "gaslib:block/gasoline_spread_north" } },
+    { "when": { "north_down": true, "north": true }, "apply": { "model": "flashpoint:block/gasoline_spread_north_down" } },
+    { "when": { "north": true, "north_down": false }, "apply": { "model": "flashpoint:block/gasoline_spread_north" } },
 
-    { "when": { "east_down": true, "east": true }, "apply": { "model": "gaslib:block/gasoline_spread_east_down" } },
-    { "when": { "east": true, "east_down": false }, "apply": { "model": "gaslib:block/gasoline_spread_east" } },
+    { "when": { "east_down": true, "east": true }, "apply": { "model": "flashpoint:block/gasoline_spread_east_down" } },
+    { "when": { "east": true, "east_down": false }, "apply": { "model": "flashpoint:block/gasoline_spread_east" } },
 
-    { "when": { "south_down": true, "south": true }, "apply": { "model": "gaslib:block/gasoline_spread_south_down" } },
-    { "when": { "south": true, "south_down": false }, "apply": { "model": "gaslib:block/gasoline_spread_south" } },
+    { "when": { "south_down": true, "south": true }, "apply": { "model": "flashpoint:block/gasoline_spread_south_down" } },
+    { "when": { "south": true, "south_down": false }, "apply": { "model": "flashpoint:block/gasoline_spread_south" } },
 
-    { "when": { "west_down": true, "west": true }, "apply": { "model": "gaslib:block/gasoline_spread_west_down" } },
-    { "when": { "west": true, "west_down": false }, "apply": { "model": "gaslib:block/gasoline_spread_west" } },
+    { "when": { "west_down": true, "west": true }, "apply": { "model": "flashpoint:block/gasoline_spread_west_down" } },
+    { "when": { "west": true, "west_down": false }, "apply": { "model": "flashpoint:block/gasoline_spread_west" } },
 
-    { "when": { "up": true }, "apply": { "model": "gaslib:block/gasoline_spread_up" } },
-    { "when": { "down": true }, "apply": { "model": "gaslib:block/gasoline_spread_down" } }
+    { "when": { "up": true }, "apply": { "model": "flashpoint:block/gasoline_spread_up" } },
+    { "when": { "down": true }, "apply": { "model": "flashpoint:block/gasoline_spread_down" } }
   ]
 }

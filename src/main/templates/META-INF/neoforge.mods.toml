@@ -88,6 +88,20 @@ I got a bag of stems, Batman...
     ordering="NONE"
     side="BOTH"
 
+[[dependencies.${mod_id}]]
+    modId="ampersandlib"
+    type="required"
+    versionRange="[1.1.1-1.21.1]"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="azurelib"
+    type="required"
+    versionRange="[3.0.35]"
+    ordering="NONE"
+    side="BOTH"
+
 # Features are specific properties of the game environment, that you may want to declare you require. This example declares
 # that your mod requires GL version 3.2 or higher. Other features will be added. They are side aware so declaring this won't
 # stop your mod loading on the server for example.

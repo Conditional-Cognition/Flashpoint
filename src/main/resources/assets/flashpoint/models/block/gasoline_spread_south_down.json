@@ -2,8 +2,8 @@
 	"format_version": "1.9.0",
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "gaslib:block/gasoline_spread_full",
-		"particle": "gaslib:block/gasoline_spread_full"
+		"0": "flashpoint:block/gasoline_spread_full",
+		"particle": "flashpoint:block/gasoline_spread_full"
 	},
 	"elements": [
 		{

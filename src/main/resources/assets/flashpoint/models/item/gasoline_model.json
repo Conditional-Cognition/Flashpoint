@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "gaslib:item/gasoline_blob"
+    "layer0": "flashpoint:item/gasoline_blob"
   }
 }

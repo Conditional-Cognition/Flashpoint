@@ -17,13 +17,14 @@ import net.neoforged.neoforge.event.server.ServerStartingEvent;
 public class Flashpoint {
     public static final String MODID = "flashpoint";
     public static final Logger LOGGER = LogUtils.getLogger();
-
+    @SuppressWarnings("unused")
     public Flashpoint(IEventBus modEventBus, ModContainer modContainer) {
         modEventBus.addListener(this::commonSetup);
         ModParticles.PARTICLE_TYPES.register(modEventBus);
         ModBlocks.BLOCKS.register(modEventBus);
         ModEntities.ENTITY_TYPES.register(modEventBus);
         ModItems.ITEMS.register(modEventBus);
+        ModTabs.CREATIVE_MODE_TABS.register(modEventBus);
         NeoForge.EVENT_BUS.register(this);
     }
 

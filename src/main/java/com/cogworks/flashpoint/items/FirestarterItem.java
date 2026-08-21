@@ -2,11 +2,6 @@ package com.cogworks.flashpoint.items;
 
 import com.cogworks.flashpoint.entities.GasolineBlobProjectile;
 import com.cogworks.flashpoint.registry.ModEntities;
-import mod.azure.azurelib.common.api.common.animatable.GeoItem;
-import mod.azure.azurelib.common.internal.client.RenderProvider;
-import mod.azure.azurelib.core.animatable.instance.AnimatableInstanceCache;
-import mod.azure.azurelib.core.animatable.instance.SingletonAnimatableInstanceCache; // <--- import
-import mod.azure.azurelib.core.animation.AnimatableManager;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.LivingEntity;
@@ -17,12 +12,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.function.Consumer;
-
-public class FirestarterItem extends Item implements GeoItem {
-
-    // Animatable cache (necessary for AzureLib/Geckolib)
-    private final AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
+public class FirestarterItem extends Item {
 
     public FirestarterItem(Properties properties) {
         super(properties);
@@ -41,26 +31,12 @@ public class FirestarterItem extends Item implements GeoItem {
     @Override
     public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level world, Player player, @NotNull InteractionHand hand) {
         player.startUsingItem(hand);
+        shootServer(world, player);
         return InteractionResultHolder.success(player.getItemInHand(hand));
     }
 
     public int getUseDuration(@SuppressWarnings("unused") ItemStack stack) {
         return 72000;
-    }
-
-    @Override
-    public void createRenderer(Consumer<RenderProvider> consumer) {
-
-    }
-
-    @Override
-    public void registerControllers(AnimatableManager.ControllerRegistrar controllerRegistrar) {
-
-    }
-
-    @Override
-    public AnimatableInstanceCache getAnimatableInstanceCache() {
-        return cache;
     }
 
     public void shootServer(Level world, Player user) {
